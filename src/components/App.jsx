@@ -1,26 +1,26 @@
 import React, { useState } from "react";
 import Header from "./Header";
 import Footer from "./Footer";
-import Note from "./Note";
+import Calculation from "./Calculation";
 import CreateArea from "./CreateArea";
 
 function App() {
   //state storing array of notes
-  const [notes, setNotes] = useState([]);
+  const [calculations, setCalculations] = useState([]);
 
   //When adding new note
-  function addNote(newNote) {
-    setNotes(prevNotes => {
+  function addCalculation(newCalculation) {
+    setCalculations(prevCalculations => {
       //stores new note in array
-      return [...prevNotes, newNote];
+      return [...prevCalculations, newCalculation];
     });
   }
 
   //deleting a not
-  function deleteNote(id) {
-    setNotes(prevNotes => {
+  function deleteCalculation(id) {
+    setCalculations(prevCalculations => {
       //filter used to finds specific note
-      return prevNotes.filter((noteItem, index) => {
+      return prevCalculations.filter((calculationItem, index) => {
         return index !== id; //keep all notes other than the found note. 
       });
     });
@@ -29,15 +29,14 @@ function App() {
   return (
     <div>
       <Header />
-      <CreateArea onAdd={addNote} />
-      {notes.map((noteItem, index) => {
+      <CreateArea onAdd={addCalculation} />
+      {calculations.map((calculationItem, index) => {
         return (
-          <Note
+          <Calculation
             key={index}
             id={index}
-            title={noteItem.title}
-            content={noteItem.content}
-            onDelete={deleteNote}
+            title={calculationItem.title}
+            onDelete={deleteCalculation}
           />
         );
       })}

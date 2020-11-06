@@ -1,7 +1,8 @@
 import React from "react";
 import DeleteIcon from "@material-ui/icons/Delete";
+let calculator = require("../model.js");
 
-function Note(props) {
+function Calculation(props) {
   function handleClick() {
     props.onDelete(props.id);
   }
@@ -34,7 +35,7 @@ function Note(props) {
 
   if(isNaN(num1)) {
     return (
-      <div className="note">
+      <div className="calculation">
       <h1>Error: First operand must be a number</h1>
         <button onClick={handleClick}>
           <DeleteIcon />
@@ -44,7 +45,7 @@ function Note(props) {
   }
   else if (spaceIndex1 === -1) {
     return (
-      <div className="note">
+      <div className="calculation">
         <h1>Error: Expession must have whitespace</h1>
           <button onClick={handleClick}>
             <DeleteIcon />
@@ -54,7 +55,7 @@ function Note(props) {
   }
   else if(!isOperator) {
     return (
-    <div className="note">
+    <div className="calculation">
       <h1>Error: Invalid Operator</h1>
         <button onClick={handleClick}>
           <DeleteIcon />
@@ -64,7 +65,7 @@ function Note(props) {
   }
   else if (space2 === -1) {
     return (
-      <div className="note">
+      <div className="calculation">
         <h1>Error: Missing space after operator</h1>
           <button onClick={handleClick}>
             <DeleteIcon />
@@ -74,7 +75,7 @@ function Note(props) {
   }
   else if(isNaN(num2)) {
     return (
-      <div className="note">
+      <div className="calculation">
         <h1>Error: Second operand must be a number</h1>
           <button onClick={handleClick}>
             <DeleteIcon />
@@ -85,7 +86,7 @@ function Note(props) {
   else {
 
     return (
-      <div className="note">
+      <div className="calculation">
       <h1>{props.title} = {result}</h1>
         <button onClick={handleClick}>
           <DeleteIcon />
@@ -96,4 +97,4 @@ function Note(props) {
 }
 
 
-export default Note;
+export default Calculation;

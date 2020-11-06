@@ -4,8 +4,8 @@ import Fab from "@material-ui/core/Fab";
 
 function CreateArea(props) {
 
-  //set state of note as an object with a title and content
-  const [note, setNote] = useState({
+  //set state of calculation as an object with a title and content
+  const [calculation, setCalculation] = useState({
     title: "",
     content: ""
   });
@@ -15,22 +15,21 @@ function CreateArea(props) {
     //deconstructing object into individual components
     const { name, value } = event.target;
 
-    setNote(prevNote => {
+    setCalculation(prevCalculation => {
       return {
-        ...prevNote,
-        [name]: value //take the value of the changed input and return it with previous notes
+        ...prevCalculation,
+        [name]: value //take the value of the changed input and return it with previous calculations
       };
     });
   }
 
-  //when the user submits the note 
-  function submitNote(event) {
+  //when the user submits the calculation 
+  function submitCalculation(event) {
     //function from App.jsx
-    props.onAdd(note);
-    //after the user finished adding the note reset the text to empty
-    setNote({
+    props.onAdd(calculation);
+    //after the user finished adding the calculation reset the text to empty
+    setCalculation({
       title: "",
-      content: ""
     });
     //prevent the form from redirecting
     event.preventDefault();
@@ -38,14 +37,14 @@ function CreateArea(props) {
 
   return (
     <div>
-      <form className="create-note">
+      <form className="create-calculation">
           <input
             name="title"
             onChange={handleChange}
-            value={note.title}
+            value={calculation.title}
             placeholder="Input Calculation Ex. (2 + 2)"
           />
-          <Fab onClick={submitNote}>
+          <Fab onClick={submitCalculation}>
             <AddIcon />
           </Fab>
       </form>

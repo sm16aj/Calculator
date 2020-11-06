@@ -23,6 +23,18 @@ function CreateArea(props) {
     });
   }
 
+  function handleKeyPress (event) {
+    if(event.key === 'Enter'){
+      props.onAdd(calculation);
+
+      setCalculation({
+        title: "",
+      });
+
+      event.preventDefault();
+    }
+  }
+
   //when the user submits the calculation 
   function submitCalculation(event) {
     //function from App.jsx
@@ -39,6 +51,7 @@ function CreateArea(props) {
     <div>
       <form className="create-calculation">
           <input
+            onKeyPress={handleKeyPress}
             name="title"
             onChange={handleChange}
             value={calculation.title}

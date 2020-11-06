@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import AddIcon from "@material-ui/icons/Add";
+//import AddIcon from "@material-ui/icons/Add";
 import Fab from "@material-ui/core/Fab";
+import DragHandleIcon from '@material-ui/icons/DragHandle';
 
 function CreateArea(props) {
 
@@ -58,7 +59,7 @@ function CreateArea(props) {
             placeholder="Input Calculation Ex. (2 + 2)"
           />
           <Fab onClick={submitCalculation}>
-            <AddIcon />
+            =
           </Fab>
       </form>
     </div>

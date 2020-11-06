@@ -1,5 +1,5 @@
 import React from "react";
-// import DeleteIcon from "@material-ui/icons/Delete";
+import DeleteIcon from "@material-ui/icons/Delete";
 
 function Note(props) {
   function handleClick() {
@@ -37,7 +37,7 @@ function Note(props) {
       <div className="note">
       <h1>Error: First operand must be a number</h1>
         <button onClick={handleClick}>
-          {/* <DeleteIcon /> */}
+          <DeleteIcon />
         </button>
       </div>
     );
@@ -47,7 +47,7 @@ function Note(props) {
       <div className="note">
         <h1>Error: Expession must have whitespace</h1>
           <button onClick={handleClick}>
-            {/* <DeleteIcon /> */}
+            <DeleteIcon />
           </button>
         </div>
       );
@@ -57,7 +57,7 @@ function Note(props) {
     <div className="note">
       <h1>Error: Invalid Operator</h1>
         <button onClick={handleClick}>
-          {/* <DeleteIcon /> */}
+          <DeleteIcon />
         </button>
       </div>
     );
@@ -67,7 +67,7 @@ function Note(props) {
       <div className="note">
         <h1>Error: Missing space after operator</h1>
           <button onClick={handleClick}>
-            {/* <DeleteIcon /> */}
+            <DeleteIcon />
           </button>
         </div>
       );
@@ -77,7 +77,7 @@ function Note(props) {
       <div className="note">
         <h1>Error: Second operand must be a number</h1>
           <button onClick={handleClick}>
-            {/* <DeleteIcon /> */}
+            <DeleteIcon />
           </button>
         </div>
       );
@@ -88,7 +88,7 @@ function Note(props) {
       <div className="note">
       <h1>{props.title} = {result}</h1>
         <button onClick={handleClick}>
-          {/* <DeleteIcon /> */}
+          <DeleteIcon />
         </button>
       </div>
     );
